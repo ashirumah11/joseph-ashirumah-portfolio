@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sc-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090E17" />
+      <stop offset="100%" stop-color="#141F36" />
+    </linearGradient>
+    <linearGradient id="sc-accent-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#60A5FA" />
+    </linearGradient>
+    <linearGradient id="sc-bar-grad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#1E3A8A" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="540" fill="url(#sc-bg)" />
+
+  <!-- Background Lines -->
+  <g opacity="0.06" stroke="#60A5FA" stroke-width="1">
+    <circle cx="800" cy="120" r="180" fill="none" />
+    <circle cx="800" cy="120" r="320" fill="none" />
+    <circle cx="800" cy="120" r="460" fill="none" />
+  </g>
+
+  <!-- Window Container -->
+  <g transform="translate(40, 30)">
+    <rect width="880" height="480" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5" />
+    
+    <!-- Titlebar -->
+    <rect width="880" height="42" rx="12" fill="#1E293B" />
+    <rect y="32" width="880" height="10" fill="#1E293B" />
+    <circle cx="24" cy="21" r="5.5" fill="#EF4444" />
+    <circle cx="42" cy="21" r="5.5" fill="#F59E0B" />
+    <circle cx="60" cy="21" r="5.5" fill="#10B981" />
+
+    <rect x="250" y="10" width="380" height="22" rx="6" fill="#0F172A" stroke="#334155" stroke-width="1" />
+    <text x="440" y="25" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94A3B8" text-anchor="middle">
+      admin.shopcore.platform/inventory/realtime
+    </text>
+
+    <!-- Header bar -->
+    <rect x="0" y="42" width="880" height="54" fill="#15213B" stroke="#334155" stroke-width="1" />
+    <text x="24" y="74" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700" fill="#F8FAFC">
+      ShopCore Engine · Transaction &amp; Inventory Bus
+    </text>
+
+    <rect x="740" y="58" width="116" height="24" rx="6" fill="#2563EB" />
+    <text x="798" y="74" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#FFFFFF" text-anchor="middle">
+      ACID Lock: ACTIVE
+    </text>
+
+    <!-- Grid Content -->
+    <g transform="translate(24, 114)">
+      <!-- Left side: SKU Inventory Ledger -->
+      <rect width="480" height="342" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1" />
+      <text x="20" y="28" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#F8FAFC">
+        Real-Time SKU Inventory Status
+      </text>
+
+      <!-- Table Header -->
+      <rect x="16" y="44" width="448" height="28" rx="4" fill="#0F172A" />
+      <text x="28" y="62" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8">SKU ID</text>
+      <text x="140" y="62" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8">ITEM NAME</text>
+      <text x="290" y="62" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8">STOCK</text>
+      <text x="390" y="62" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8">STATUS</text>
+
+      <!-- Row 1 -->
+      <g transform="translate(16, 76)">
+        <text x="12" y="24" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38BDF8">SKU-9021</text>
+        <text x="124" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#F8FAFC">Enterprise Pro Server</text>
+        <text x="274" y="24" font-family="'JetBrains Mono', monospace" font-size="11" fill="#10B981">1,480 units</text>
+        <rect x="364" y="10" width="68" height="18" rx="4" fill="#064E3B" />
+        <text x="398" y="23" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6EE7B7" text-anchor="middle">IN STOCK</text>
+      </g>
+      <line x1="16" y1="114" x2="464" y2="114" stroke="#334155" stroke-width="0.8" />
+
+      <!-- Row 2 -->
+      <g transform="translate(16, 118)">
+        <text x="12" y="24" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38BDF8">SKU-8832</text>
+        <text x="124" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#F8FAFC">Cloud NVMe Drive 4TB</text>
+        <text x="274" y="24" font-family="'JetBrains Mono', monospace" font-size="11" fill="#F59E0B">42 units</text>
+        <rect x="364" y="10" width="68" height="18" rx="4" fill="#78350F" />
+        <text x="398" y="23" font-family="'JetBrains Mono', monospace" font-size="9" fill="#FCD34D" text-anchor="middle">LOW STOCK</text>
+      </g>
+      <line x1="16" y1="156" x2="464" y2="156" stroke="#334155" stroke-width="0.8" />
+
+      <!-- Row 3 -->
+      <g transform="translate(16, 160)">
+        <text x="12" y="24" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38BDF8">SKU-7740</text>
+        <text x="124" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#F8FAFC">Managed Switch 48P</text>
+        <text x="274" y="24" font-family="'JetBrains Mono', monospace" font-size="11" fill="#10B981">620 units</text>
+        <rect x="364" y="10" width="68" height="18" rx="4" fill="#064E3B" />
+        <text x="398" y="23" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6EE7B7" text-anchor="middle">IN STOCK</text>
+      </g>
+      <line x1="16" y1="198" x2="464" y2="198" stroke="#334155" stroke-width="0.8" />
+
+      <!-- Row 4 -->
+      <g transform="translate(16, 202)">
+        <text x="12" y="24" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38BDF8">SKU-6129</text>
+        <text x="124" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#F8FAFC">Load Balancer Rack Unit</text>
+        <text x="274" y="24" font-family="'JetBrains Mono', monospace" font-size="11" fill="#10B981">89 units</text>
+        <rect x="364" y="10" width="68" height="18" rx="4" fill="#064E3B" />
+        <text x="398" y="23" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6EE7B7" text-anchor="middle">IN STOCK</text>
+      </g>
+      <line x1="16" y1="240" x2="464" y2="240" stroke="#334155" stroke-width="0.8" />
+
+      <!-- Row 5 -->
+      <g transform="translate(16, 244)">
+        <text x="12" y="24" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38BDF8">SKU-5421</text>
+        <text x="124" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#F8FAFC">Dedicated HSM Security</text>
+        <text x="274" y="24" font-family="'JetBrains Mono', monospace" font-size="11" fill="#EF4444">0 units</text>
+        <rect x="364" y="10" width="68" height="18" rx="4" fill="#7F1D1D" />
+        <text x="398" y="23" font-family="'JetBrains Mono', monospace" font-size="9" fill="#FCA5A5" text-anchor="middle">ORDERING</text>
+      </g>
+
+      <!-- Bottom Summary -->
+      <rect x="16" y="292" width="448" height="38" rx="6" fill="#0F172A" />
+      <text x="28" y="316" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94A3B8">
+        PostgreSQL Row Locks: 0 Deadlocks · Select For Update OK
+      </text>
+
+      <!-- Right side: Throughput & Latency -->
+      <g transform="translate(502, 0)">
+        <rect width="330" height="162" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1" />
+        <text x="18" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#F8FAFC">
+          Hourly Orders &amp; Checkout Throughput
+        </text>
+
+        <!-- Bar chart -->
+        <g transform="translate(24, 46)">
+          <rect x="0" y="55" width="22" height="45" rx="3" fill="url(#sc-bar-grad)" />
+          <rect x="38" y="40" width="22" height="60" rx="3" fill="url(#sc-bar-grad)" />
+          <rect x="76" y="25" width="22" height="75" rx="3" fill="url(#sc-bar-grad)" />
+          <rect x="114" y="15" width="22" height="85" rx="3" fill="url(#sc-bar-grad)" />
+          <rect x="152" y="30" width="22" height="70" rx="3" fill="url(#sc-bar-grad)" />
+          <rect x="190" y="8" width="22" height="92" rx="3" fill="#60A5FA" />
+          <rect x="228" y="18" width="22" height="82" rx="3" fill="url(#sc-bar-grad)" />
+          <rect x="266" y="32" width="22" height="68" rx="3" fill="url(#sc-bar-grad)" />
+        </g>
+        <text x="24" y="150" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8">
+          Peak: 4,820 orders/min @ 99.98% uptime
+        </text>
+
+        <!-- Bottom right card: API Gateway stats -->
+        <g transform="translate(0, 180)">
+          <rect width="330" height="162" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1" />
+          <text x="18" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" fill="#F8FAFC">
+            Payment &amp; Stripe Webhook Pipeline
+          </text>
+          
+          <rect x="18" y="44" width="294" height="32" rx="6" fill="#0F172A" />
+          <text x="30" y="64" font-family="'JetBrains Mono', monospace" font-size="11" fill="#10B981">● Webhook idempotency key verified</text>
+          
+          <rect x="18" y="84" width="294" height="32" rx="6" fill="#0F172A" />
+          <text x="30" y="104" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38BDF8">● Ledger double-entry balanced</text>
+
+          <rect x="18" y="124" width="294" height="24" rx="4" fill="#0F172A" />
+          <text x="30" y="140" font-family="'JetBrains Mono', monospace" font-size="10" fill="#94A3B8">Event delivery latency: 14ms</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About | {{ profile.name|default:"Joseph Ashirumah" }} — Full-Stack Software Engineer{% endblock %}
+
+{% block content %}
+<div class="case-study-hero">
+  <div class="container">
+    <a href="{% url 'core:home' %}" class="case-study-back">
+      <i class="bi bi-arrow-left"></i> Back to Overview
+    </a>
+    <span class="hero-eyebrow">ENGINEERING PROFILE</span>
+    <h1 class="hero-title mb-2">About &amp; Technical Philosophy</h1>
+    <p class="section-subtitle" style="max-width: 680px;">
+      How I think about systems, design scalable software architectures, and build reliable applications from the ground up.
+    </p>
+  </div>
+</div>
+
+<section class="section-wrapper">
+  <div class="container">
+    <div class="row g-5">
+      <!-- Left Column: Biography & Mindset -->
+      <div class="col-lg-8">
+        <div class="case-study-card">
+          <h2 class="case-study-heading">
+            <i class="bi bi-person-lines-fill"></i> Professional Background
+          </h2>
+          <div class="case-study-text mb-4">
+            {{ profile.about_text|linebreaks }}
+          </div>
+
+          <h2 class="case-study-heading mt-5">
+            <i class="bi bi-gear-wide"></i> My Approach to Software Development
+          </h2>
+          <div class="case-study-text">
+            <p>
+              I believe modern software engineering is not merely about assembling libraries or writing code quickly; it is about building software that is <strong>comprehensible, verifiable, and resilient over time</strong>.
+            </p>
+            <p>
+              My engineering decisions are guided by four foundational principles:
+            </p>
+            <ul class="text-secondary ps-3" style="line-height: 1.85;">
+              <li><strong class="text-dark">Schema-First Relational Modeling:</strong> A well-normalized database schema with clear constraints prevents data anomalies that no amount of application code can comfortably patch.</li>
+              <li><strong class="text-dark">Pragmatic Modularity:</strong> Prefer clear, cohesive Django service layers and standard patterns over premature abstraction and over-engineering.</li>
+              <li><strong class="text-dark">Defensive Security &amp; Data Validation:</strong> Strict input validation, sanitized database queries, CSRF defenses, and least-privilege access across all layers.</li>
+              <li><strong class="text-dark">Continuous Feedback Loops:</strong> Comprehensive unit testing and regression prevention to allow rapid, confident production deployments.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Experience & Education in About -->
+        <div class="case-study-card">
+          <h2 class="case-study-heading">
+            <i class="bi bi-mortarboard-fill"></i> Education &amp; Certifications
+          </h2>
+          <div class="row g-3">
+            {% for edu in education_list %}
+            <div class="col-12">
+              <div class="cred-card mb-2">
+                <div class="d-flex justify-content-between align-items-baseline mb-1">
+                  <h3 class="h6 fw-bold text-dark mb-0">{{ edu.title }}</h3>
+                  <span class="timeline-date-badge">{{ edu.start_date }} - {{ edu.end_date }}</span>
+                </div>
+                <div class="small text-muted mb-2">{{ edu.organization }} {% if edu.location %}• {{ edu.location }}{% endif %}</div>
+                <p class="small text-secondary mb-0">{{ edu.description }}</p>
+              </div>
+            </div>
+            {% endfor %}
+
+            {% for cert in certifications_list %}
+            <div class="col-12">
+              <div class="cred-card mb-2">
+                <div class="d-flex justify-content-between align-items-baseline mb-1">
+                  <h3 class="h6 fw-bold text-dark mb-0">{{ cert.title }}</h3>
+                  <span class="timeline-date-badge">{{ cert.start_date }}</span>
+                </div>
+                <div class="small text-muted mb-2">{{ cert.organization }}</div>
+                <p class="small text-secondary mb-2">{{ cert.description }}</p>
+                {% if cert.credential_url %}
+                <div class="mt-2">
+                  <a href="{{ cert.credential_url }}" target="_blank" rel="noopener noreferrer" class="small fw-semibold text-primary">
+                    <i class="bi bi-link-45deg"></i> Verify Credential
+                  </a>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Quick Profile Card & Contact Info -->
+      <div class="col-lg-4">
+        <div class="about-card-profile sticky-top" style="top: 6.5rem;">
+          <div class="text-center mb-4">
+            <div class="profile-avatar-container">
+              {% if profile.profile_photo %}
+                <img
+                  src="{{ profile.profile_photo.url }}"
+                  alt="{{ profile.name }}"
+                  class="profile-avatar-img"
+                >
+              {% else %}
+                <img
+                  src="{% static 'images/avatar-joseph.svg' %}"
+                  alt="{{ profile.name }}"
+                  class="profile-avatar-img"
+                >
+              {% endif %}
+            </div>
+            <h3 class="h5 fw-bold text-dark mb-1">{{ profile.name }}</h3>
+            <p class="text-muted small mb-2">{{ profile.professional_title }}</p>
+            {% if profile.status_active %}
+            <span class="status-pill">
+              <span class="status-dot"></span>
+              <span>{{ profile.status_badge }}</span>
+            </span>
+            {% endif %}
+          </div>
+
+          <div class="profile-facts-list mb-4">
+            <div class="profile-fact-item">
+              <span class="fact-label">Direct Email</span>
+              <span class="fact-value small">
+                <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>
+              </span>
+            </div>
+
+            {% if profile.location %}
+            <div class="profile-fact-item">
+              <span class="fact-label">Location</span>
+              <span class="fact-value small">{{ profile.location }}</span>
+            </div>
+            {% endif %}
+
+            <div class="profile-fact-item">
+              <span class="fact-label">Core Specialization</span>
+              <span class="fact-value small">Python · Django · SQL · Modern UI</span>
+            </div>
+          </div>
+
+          <div class="d-grid gap-2">
+            {% if profile.cv_file %}
+            <a href="{{ profile.cv_file.url }}" class="btn-custom-outline text-center" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-file-earmark-arrow-down me-1"></i> Download Résumé / CV
+            </a>
+            {% endif %}
+            <a href="{% url 'contact:contact_page' %}" class="btn-custom-primary text-center">
+              <i class="bi bi-envelope-fill me-1"></i> Contact Me
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

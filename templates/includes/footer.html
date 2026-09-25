@@ -1,0 +1,60 @@
+{% load static %}
+<footer class="dark-footer">
+  <div class="container">
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3 mb-4">
+      <div>
+        <a class="nav-brand text-white" href="{% url 'core:home' %}">
+          <span class="brand-symbol">&lt;/&gt;</span>
+          <span class="text-white fw-bold">Joseph.dev</span>
+        </a>
+        <div class="dark-footer-title">
+          Full-Stack Software Engineer
+        </div>
+      </div>
+
+      <!-- Quick Nav Links -->
+      <div class="d-flex flex-wrap gap-4 small">
+        <a href="{% url 'core:home' %}#hero" class="dark-footer-link">Home</a>
+        <a href="{% url 'core:home' %}#about" class="dark-footer-link">About</a>
+        <a href="{% url 'core:home' %}#projects" class="dark-footer-link">Projects</a>
+        <a href="{% url 'core:home' %}#contact" class="dark-footer-link">Contact</a>
+      </div>
+
+      <!-- Social Icons -->
+      <div class="d-flex gap-2">
+        <a href="{{ profile.github_url|default:'https://github.com/joseph' }}" class="dark-social-btn" target="_blank" rel="noopener noreferrer" title="GitHub">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="{{ profile.linkedin_url|default:'https://linkedin.com/in/joseph' }}" class="dark-social-btn" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="{{ profile.twitter_url|default:'https://x.com/joseph' }}" class="dark-social-btn" target="_blank" rel="noopener noreferrer" title="Twitter / X">
+          <i class="bi bi-twitter-x"></i>
+        </a>
+        <a href="mailto:{{ profile.email|default:'joseph@example.com' }}" class="dark-social-btn" title="Email">
+          <i class="bi bi-envelope"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-2 pt-3 border-top border-secondary border-opacity-25 small text-secondary">
+      <div>
+        &copy; {% now "Y" %} Joseph Ashirumah &bull; Built with Python + Django
+      </div>
+      <div>
+        <a href="/admin/" class="text-secondary text-decoration-none" title="Django Administration">Admin</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top button -->
+<button
+  type="button"
+  class="btn-back-to-top"
+  id="backToTopBtn"
+  aria-label="Back to top"
+  title="Back to top"
+>
+  <i class="bi bi-chevron-up"></i>
+</button>

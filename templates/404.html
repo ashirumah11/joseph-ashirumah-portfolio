@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Page Not Found (404) | {{ profile.name|default:"Joseph Ashirumah" }}{% endblock %}
+
+{% block content %}
+<div class="container py-5 text-center" style="min-height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+  <div class="mb-3">
+    <span class="brand-icon-box mx-auto" style="width: 56px; height: 56px; font-size: 1.5rem;">404</span>
+  </div>
+  <h1 class="hero-title fs-2 mb-2">Resource Not Found</h1>
+  <p class="text-secondary lead fs-6 mb-4" style="max-width: 480px;">
+    The page or project case study you requested could not be located on this server.
+  </p>
+  <div class="d-flex gap-2">
+    <a href="{% url 'core:home' %}" class="btn btn-custom-primary">
+      <i class="bi bi-house-door"></i> Return to Homepage
+    </a>
+    <a href="{% url 'projects:project_list' %}" class="btn btn-custom-outline">
+      <i class="bi bi-briefcase"></i> View Projects
+    </a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ts-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A101D" />
+      <stop offset="100%" stop-color="#162238" />
+    </linearGradient>
+  </defs>
+
+  <rect width="960" height="540" fill="url(#ts-bg)" />
+
+  <g transform="translate(40, 30)">
+    <rect width="880" height="480" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1.5" />
+    
+    <!-- Titlebar -->
+    <rect width="880" height="42" rx="12" fill="#1E293B" />
+    <rect y="32" width="880" height="10" fill="#1E293B" />
+    <circle cx="24" cy="21" r="5.5" fill="#EF4444" />
+    <circle cx="42" cy="21" r="5.5" fill="#F59E0B" />
+    <circle cx="60" cy="21" r="5.5" fill="#10B981" />
+
+    <rect x="250" y="10" width="380" height="22" rx="6" fill="#0F172A" stroke="#334155" stroke-width="1" />
+    <text x="440" y="25" font-family="'JetBrains Mono', monospace" font-size="11" fill="#94A3B8" text-anchor="middle">
+      taskstream.app/workspace/sprint-34
+    </text>
+
+    <!-- Header bar -->
+    <rect x="0" y="42" width="880" height="48" fill="#141E33" stroke="#334155" stroke-width="1" />
+    <text x="24" y="72" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#F8FAFC">
+      Sprint 34 Board · Real-Time WebSocket Kanban
+    </text>
+
+    <g transform="translate(730, 56)">
+      <circle cx="10" cy="10" r="10" fill="#3B82F6" />
+      <text x="10" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#FFF" text-anchor="middle">JA</text>
+      <circle cx="26" cy="10" r="10" fill="#10B981" />
+      <text x="26" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#FFF" text-anchor="middle">MK</text>
+      <circle cx="42" cy="10" r="10" fill="#F59E0B" />
+      <text x="42" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#FFF" text-anchor="middle">SL</text>
+      <circle cx="58" cy="10" r="10" fill="#8B5CF6" />
+      <text x="58" y="14" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#FFF" text-anchor="middle">+4</text>
+    </g>
+
+    <!-- Kanban Columns -->
+    <g transform="translate(24, 106)">
+      <!-- Column 1: Backlog -->
+      <g transform="translate(0, 0)">
+        <rect width="195" height="350" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1" />
+        <text x="14" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#94A3B8">BACKLOG (4)</text>
+        
+        <!-- Card 1 -->
+        <g transform="translate(10, 38)">
+          <rect width="175" height="88" rx="6" fill="#0F172A" stroke="#334155" stroke-width="1" />
+          <rect x="10" y="10" width="55" height="16" rx="4" fill="#1E3A8A" />
+          <text x="37" y="22" font-family="'JetBrains Mono', monospace" font-size="9" fill="#93C5FD" text-anchor="middle">CORE-89</text>
+          <text x="10" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#F8FAFC">Cache invalidation rules</text>
+          <text x="10" y="62" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94A3B8">Redis pub/sub sync</text>
+          <circle cx="155" cy="72" r="7" fill="#3B82F6" />
+        </g>
+
+        <!-- Card 2 -->
+        <g transform="translate(10, 136)">
+          <rect width="175" height="88" rx="6" fill="#0F172A" stroke="#334155" stroke-width="1" />
+          <rect x="10" y="10" width="55" height="16" rx="4" fill="#064E3B" />
+          <text x="37" y="22" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6EE7B7" text-anchor="middle">API-124</text>
+          <text x="10" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#F8FAFC">Export CSV stream</text>
+          <text x="10" y="62" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94A3B8">Django StreamingResponse</text>
+          <circle cx="155" cy="72" r="7" fill="#10B981" />
+        </g>
+      </g>
+
+      <!-- Column 2: In Progress -->
+      <g transform="translate(212, 0)">
+        <rect width="195" height="350" rx="8" fill="#1E293B" stroke="#2563EB" stroke-width="1" />
+        <text x="14" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#60A5FA">IN PROGRESS (2)</text>
+        
+        <!-- Card 1 -->
+        <g transform="translate(10, 38)">
+          <rect width="175" height="98" rx="6" fill="#0F172A" stroke="#2563EB" stroke-width="1" />
+          <rect x="10" y="10" width="60" height="16" rx="4" fill="#312E81" />
+          <text x="40" y="22" font-family="'JetBrains Mono', monospace" font-size="9" fill="#A5B4FC" text-anchor="middle">AUTH-441</text>
+          <text x="10" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#F8FAFC">OAuth2 Single Sign-On</text>
+          <text x="10" y="60" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94A3B8">PKCE authorization code</text>
+          <rect x="10" y="74" width="70" height="14" rx="3" fill="#1E293B" />
+          <text x="45" y="84" font-family="'JetBrains Mono', monospace" font-size="8" fill="#38BDF8" text-anchor="middle">3 PRs linked</text>
+          <circle cx="155" cy="80" r="7" fill="#3B82F6" />
+        </g>
+
+        <!-- Card 2 -->
+        <g transform="translate(10, 146)">
+          <rect width="175" height="98" rx="6" fill="#0F172A" stroke="#334155" stroke-width="1" />
+          <rect x="10" y="10" width="60" height="16" rx="4" fill="#78350F" />
+          <text x="40" y="22" font-family="'JetBrains Mono', monospace" font-size="9" fill="#FCD34D" text-anchor="middle">PERF-09</text>
+          <text x="10" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#F8FAFC">Query index tuning</text>
+          <text x="10" y="60" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94A3B8">PostgreSQL composite idx</text>
+          <circle cx="155" cy="80" r="7" fill="#F59E0B" />
+        </g>
+      </g>
+
+      <!-- Column 3: Review -->
+      <g transform="translate(424, 0)">
+        <rect width="195" height="350" rx="8" fill="#1E293B" stroke="#334155" stroke-width="1" />
+        <text x="14" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#F59E0B">CODE REVIEW (1)</text>
+
+        <!-- Card 1 -->
+        <g transform="translate(10, 38)">
+          <rect width="175" height="98" rx="6" fill="#0F172A" stroke="#334155" stroke-width="1" />
+          <rect x="10" y="10" width="55" height="16" rx="4" fill="#064E3B" />
+          <text x="37" y="22" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6EE7B7" text-anchor="middle">UI-291</text>
+          <text x="10" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#F8FAFC">Drag &amp; drop reordering</text>
+          <text x="10" y="60" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#94A3B8">Optimistic UI updates</text>
+          <rect x="10" y="74" width="76" height="14" rx="3" fill="#064E3B" />
+          <text x="48" y="84" font-family="'JetBrains Mono', monospace" font-size="8" fill="#A7F3D0" text-anchor="middle">2 Approvals ✓</text>
+          <circle cx="155" cy="80" r="7" fill="#8B5CF6" />
+        </g>
+      </g>
+
+      <!-- Column 4: Shipped -->
+      <g transform="translate(636, 0)">
+        <rect width="195" height="350" rx="8" fill="#1E293B" stroke="#059669" stroke-width="1" />
+        <text x="14" y="24" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#34D399">SHIPPED (12)</text>
+
+        <!-- Card 1 -->
+        <g transform="translate(10, 38)">
+          <rect width="175" height="88" rx="6" fill="#0F172A" stroke="#059669" stroke-width="1" />
+          <rect x="10" y="10" width="60" height="16" rx="4" fill="#064E3B" />
+          <text x="40" y="22" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6EE7B7" text-anchor="middle">PROD-51</text>
+          <text x="10" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#F8FAFC">WebSocket Presence</text>
+          <text x="10" y="62" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#10B981">Deployed to US-East</text>
+          <circle cx="155" cy="72" r="7" fill="#10B981" />
+        </g>
+
+        <!-- Card 2 -->
+        <g transform="translate(10, 136)">
+          <rect width="175" height="88" rx="6" fill="#0F172A" stroke="#334155" stroke-width="1" />
+          <rect x="10" y="10" width="60" height="16" rx="4" fill="#064E3B" />
+          <text x="40" y="22" font-family="'JetBrains Mono', monospace" font-size="9" fill="#6EE7B7" text-anchor="middle">PROD-50</text>
+          <text x="10" y="44" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" fill="#F8FAFC">Audit Logging Signal</text>
+          <text x="10" y="62" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" fill="#10B981">Zero-downtime release</text>
+          <circle cx="155" cy="72" r="7" fill="#3B82F6" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,497 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- ==========================================================================
+     PANEL 1: HERO SECTION
+     ========================================================================== -->
+<section class="hero-section" id="hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <!-- Left: Introduction -->
+      <div class="col-lg-6">
+        <div class="hero-status-pill">
+          <span class="hero-status-dot"></span>
+          <span>AVAILABLE FOR SOFTWARE ENGINEERING OPPORTUNITIES</span>
+        </div>
+
+        <span class="hero-eyebrow">FULL-STACK SOFTWARE ENGINEER</span>
+
+        <h1 class="hero-heading">
+          {{ profile.headline|default:"Building reliable software for the modern web." }}
+        </h1>
+
+        <p class="hero-paragraph">
+          {{ profile.subheadline|default:"I'm a Full-Stack Software Engineer specializing in Python, Django, SQL and modern frontend development. I enjoy turning ideas into reliable, maintainable web applications." }}
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-btn-group">
+          <a href="#projects" class="btn-primary-pill">
+            View My Work &rarr;
+          </a>
+          <a href="#contact" class="btn-outline-pill">
+            Let's Talk
+          </a>
+        </div>
+
+        <!-- Core Stack Strip -->
+        <div class="hero-core-stack">
+          <span class="core-stack-label">CORE STACK</span>
+          <div class="core-stack-items">
+            <span class="core-stack-item">
+              <svg width="18" height="18" viewBox="0 0 110 110" fill="none"><path d="M54.5 5C27.2 5 28.9 16.8 28.9 16.8L28.9 29.1L55.5 29.1L55.5 32.8L18.2 32.8C18.2 32.8 5 31.3 5 58.6C5 85.9 16.5 84.5 16.5 84.5L23.4 84.5L23.4 74.8C23.4 74.8 23 63.1 34.9 63.1L61.3 63.1C61.3 63.1 72.3 63.3 72.3 52.4L72.3 16.8C72.3 16.8 74.4 5 54.5 5ZM41.8 14.7C44.7 14.7 47 17 47 19.9C47 22.8 44.7 25.1 41.8 25.1C38.9 25.1 36.6 22.8 36.6 19.9C36.6 17 38.9 14.7 41.8 14.7Z" fill="#3776AB"/><path d="M55.5 105C82.8 105 81.1 93.2 81.1 93.2L81.1 80.9L54.5 80.9L54.5 77.2L91.8 77.2C91.8 77.2 105 78.7 105 51.4C105 24.1 93.5 25.5 93.5 25.5L86.6 25.5L86.6 35.2C86.6 35.2 87 46.9 75.1 46.9L48.7 46.9C48.7 46.9 37.7 46.7 37.7 57.6L37.7 93.2C37.7 93.2 35.6 105 55.5 105ZM68.2 95.3C65.3 95.3 63 93 63 90.1C63 87.2 65.3 84.9 68.2 84.9C71.1 84.9 73.4 87.2 73.4 90.1C73.4 93 71.1 95.3 68.2 95.3Z" fill="#FFD43B"/></svg>
+              Python
+            </span>
+            <span class="core-stack-item">
+              <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="6" fill="#092E20"/><path d="M12.8 8.5H16.2V19.7C15.2 19.9 14.2 20 13.2 20C10.2 20 8.5 18.5 8.5 15.5C8.5 12.6 10.3 11 13 11C13.8 11 14.5 11.2 14.8 11.4V13.8C14.3 13.5 13.8 13.3 13.2 13.3C11.9 13.3 11.1 14.1 11.1 15.4C11.1 16.8 11.8 17.6 13.1 17.6C13.4 17.6 13.7 17.5 14 17.5V8.5H12.8ZM18 11.2H20.6V23.5H18V11.2ZM18 7.5H20.6V9.8H18V7.5Z" fill="#2BA177"/></svg>
+              Django
+            </span>
+            <span class="core-stack-item">
+              <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><path d="M16 2.5C8.5 2.5 2.5 8.5 2.5 16C2.5 23.5 8.5 29.5 16 29.5C23.5 29.5 29.5 23.5 29.5 16C29.5 8.5 23.5 2.5 16 2.5Z" fill="#336791"/><path d="M19.8 11.5C19.1 10.5 17.9 9.8 16.5 9.8C14.2 9.8 12.5 11.6 12.5 14C12.5 16.4 14.2 18.2 16.5 18.2C17.9 18.2 19.1 17.5 19.8 16.5V20.5H21.8V11.5H19.8ZM16.5 16.2C15.3 16.2 14.5 15.2 14.5 14C14.5 12.8 15.3 11.8 16.5 11.8C17.7 11.8 18.5 12.8 18.5 14C18.5 15.2 17.7 16.2 16.5 16.2Z" fill="#FFFFFF"/></svg>
+              PostgreSQL
+            </span>
+            <span class="core-stack-item">
+              <svg width="18" height="18" viewBox="0 0 115.3 100" fill="none"><ellipse cx="57.65" cy="50" rx="16.7" ry="43.5" transform="rotate(30 57.65 50)" stroke="#61DAFB" stroke-width="6"/><ellipse cx="57.65" cy="50" rx="16.7" ry="43.5" transform="rotate(90 57.65 50)" stroke="#61DAFB" stroke-width="6"/><ellipse cx="57.65" cy="50" rx="16.7" ry="43.5" transform="rotate(150 57.65 50)" stroke="#61DAFB" stroke-width="6"/><circle cx="57.65" cy="50" r="9.5" fill="#61DAFB"/></svg>
+              React
+            </span>
+            <span class="core-stack-item">
+              <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="4" fill="#F7DF1E"/><path d="M18.8 22.3C19.6 23.6 20.8 24.5 22.8 24.5C24.5 24.5 25.6 23.7 25.6 22.3C25.6 20.9 24.7 20.3 23.2 19.6L22.2 19.1C19.4 17.9 17.7 16.4 17.7 13.2C17.7 10.2 20.1 8 23.6 8C26.1 8 27.9 9 29 11.1L26.6 12.6C26 11.5 25 10.9 23.6 10.9C22.3 10.9 21.3 11.7 21.3 12.8C21.3 13.9 22.1 14.5 23.6 15.1L24.6 15.5C27.9 16.9 29.5 18.4 29.5 21.8C29.5 25.3 26.7 27.3 22.7 27.3C19.1 27.3 16.9 25.4 15.9 23.2L18.8 22.3ZM8.5 22.7L11.3 21C11.9 22 12.5 22.7 13.5 22.7C14.6 22.7 15.3 22 15.3 20.2V8.5H18.9V20.2C18.9 24.6 16.3 26.6 13.3 26.6C10.6 26.6 8.9 24.9 8.5 22.7Z" fill="#000000"/></svg>
+              JavaScript
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Dual-Pane Dark Developer Card -->
+      <div class="col-lg-6">
+        <div class="hero-card-glow-wrap">
+          <div class="dual-dev-card">
+            <!-- Left Pane: Code Editor -->
+            <div class="dev-card-left">
+              <div class="dev-card-header">
+                <div class="window-dots">
+                  <span class="window-dot dot-close"></span>
+                  <span class="window-dot dot-min"></span>
+                  <span class="window-dot dot-max"></span>
+                </div>
+                <div class="editor-tab">
+                  <i class="bi bi-filetype-py tab-icon text-info"></i>
+                  <span>developer.py</span>
+                </div>
+              </div>
+              <pre class="dev-code-body"><code><span class="syn-kw">class</span> <span class="syn-cls">FullStackEngineer</span>:
+    stack = [
+        <span class="syn-str">"Python"</span>,
+        <span class="syn-str">"Django"</span>,
+        <span class="syn-str">"PostgreSQL"</span>,
+        <span class="syn-str">"React"</span>,
+    ]
+
+    <span class="syn-kw">def</span> <span class="syn-fn">build</span>(<span class="syn-var">self</span>):
+        <span class="syn-kw">return</span> <span class="syn-str">"Better web applications"</span></code></pre>
+            </div>
+
+            <!-- Right Pane: Health & Tech Stack -->
+            <div class="dev-card-right">
+              <!-- System Health Sub-card -->
+              <div class="health-subcard mb-3">
+                <div class="subcard-title">System Health</div>
+                <div class="subcard-row">
+                  <span>API</span>
+                  <span class="status-online"><span class="status-dot"></span> Online</span>
+                </div>
+                <div class="subcard-row">
+                  <span>Database</span>
+                  <span class="status-online"><span class="status-dot"></span> Online</span>
+                </div>
+                <div class="subcard-row">
+                  <span>Workers</span>
+                  <span class="status-online"><span class="status-dot"></span> Online</span>
+                </div>
+              </div>
+
+              <!-- Tech Stack Sub-card -->
+              <div class="stack-subcard">
+                <div class="subcard-title">Tech Stack</div>
+                <div class="stack-item-row">
+                  <i class="bi bi-filetype-py text-warning"></i>
+                  <span>Python</span>
+                </div>
+                <div class="stack-item-row">
+                  <i class="bi bi-braces text-success"></i>
+                  <span>Django</span>
+                </div>
+                <div class="stack-item-row">
+                  <i class="bi bi-database-fill text-primary"></i>
+                  <span>PostgreSQL</span>
+                </div>
+                <div class="stack-item-row">
+                  <i class="bi bi-atom text-info"></i>
+                  <span>React</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     PANEL 2: ABOUT ME SECTION
+     ========================================================================== -->
+<section class="about-section" id="about">
+  <div class="container">
+    <!-- Top 3-Way Split: Bio | Photo | Metadata -->
+    <div class="row align-items-center g-4 mb-5">
+      <!-- Left: Bio -->
+      <div class="col-lg-5">
+        <span class="section-eyebrow"><i class="bi bi-person me-1"></i> ABOUT ME</span>
+        <h2 class="section-title">Engineering software with clarity and purpose.</h2>
+        <p class="text-secondary" style="font-size: 0.95rem; line-height: 1.65; max-width: 440px;">
+          {{ profile.short_bio|default:"I'm a Full-Stack Software Engineer with a passion for building practical, scalable and user-focused web applications. I love solving real problems with clean code, thoughtful design and modern technologies." }}
+        </p>
+        <div class="mt-4">
+          <a href="#projects" class="btn-primary-pill">
+            View My Work &rarr;
+          </a>
+        </div>
+      </div>
+
+      <!-- Center: Portrait Photo with Badge -->
+      <div class="col-lg-3 text-center">
+        <div class="about-portrait-card">
+          <img
+            src="{% static 'images/profile-headshot.jpg' %}"
+            alt="Joseph Ashirumah"
+            class="about-portrait-img"
+          >
+          <div class="about-floating-badge">
+            Full-Stack Engineer
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Metadata Rows -->
+      <div class="col-lg-4">
+        <div class="about-meta-list ps-lg-3">
+          <div class="about-meta-item">
+            <div class="about-meta-icon">
+              <i class="bi bi-geo-alt"></i>
+            </div>
+            <div>
+              <div class="meta-label">Based in</div>
+              <div class="meta-value">{{ profile.location|default:"Lagos, Nigeria" }}</div>
+            </div>
+          </div>
+
+          <div class="about-meta-item">
+            <div class="about-meta-icon">
+              <i class="bi bi-code-slash"></i>
+            </div>
+            <div>
+              <div class="meta-label">Specialization</div>
+              <div class="meta-value">Python / Django / SQL</div>
+            </div>
+          </div>
+
+          <div class="about-meta-item">
+            <div class="about-meta-icon">
+              <i class="bi bi-bullseye"></i>
+            </div>
+            <div>
+              <div class="meta-label">Focus</div>
+              <div class="meta-value">Full-Stack Engineering</div>
+            </div>
+          </div>
+
+          <div class="about-meta-item">
+            <div class="about-meta-icon">
+              <i class="bi bi-briefcase"></i>
+            </div>
+            <div>
+              <div class="meta-label">Open to</div>
+              <div class="meta-value">Software Engineering Opportunities</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom: 4 Value Pillar Cards -->
+    <div class="row g-4">
+      {% for pillar in value_pillars %}
+      <div class="col-md-6 col-lg-3">
+        <div class="value-pillar-card">
+          <div class="value-pillar-icon">
+            <i class="bi {{ pillar.icon|default:'bi-check-circle' }}"></i>
+          </div>
+          <h3 class="value-pillar-title">{{ pillar.title }}</h3>
+          <p class="value-pillar-desc">{{ pillar.short_summary }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     PANEL 3: SELECTED WORK (PROJECTS SHOWCASE)
+     ========================================================================== -->
+<section class="projects-section" id="projects">
+  <div class="container">
+    <div class="projects-header-row">
+      <div>
+        <span class="section-eyebrow">FEATURED PROJECTS</span>
+        <h2 class="section-title mb-1">Selected Work</h2>
+        <p class="section-subtitle mb-0">
+          A few projects that showcase my skills in building real-world, full-stack applications.
+        </p>
+      </div>
+      <div>
+        <a href="{% url 'projects:project_list' %}" class="link-view-all">
+          View All Projects ({{ featured_projects.count|add:other_projects.count|default:4 }}) &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Top Featured Project 01: DevPulse (Full-Width Card) -->
+    {% for project in featured_projects|slice:":1" %}
+    <div class="project-hero-card mb-4">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <div class="project-tag-num mb-2">
+            <span class="p-num">01</span>
+            <span class="p-cat">BACKEND / SYSTEMS</span>
+          </div>
+          <h3 class="project-hero-title">{{ project.title }}</h3>
+          <div class="project-hero-sub">Distributed Task &amp; System Health Monitor</div>
+          <p class="project-hero-desc">{{ project.short_description }}</p>
+
+          <div class="project-tech-badges mb-4">
+            {% for tech in project.technologies.all %}
+            <span class="tech-badge-pill">{{ tech.name }}</span>
+            {% endfor %}
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <a href="{{ project.get_absolute_url }}" class="btn-primary-pill">
+              View Case Study &rarr;
+            </a>
+            {% if project.github_url %}
+            <a href="{{ project.github_url }}" class="btn-outline-pill" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-github"></i> GitHub
+            </a>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="project-preview-frame">
+            <img src="{% static 'images/project-devpulse.svg' %}" alt="{{ project.title }} Dashboard" class="img-fluid rounded-3">
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+    <!-- Bottom 2 Projects: ShopCore & QueryCraft (2-Column Grid) -->
+    <div class="row g-4">
+      {% for project in featured_projects|slice:"1:3" %}
+      <div class="col-lg-6">
+        <div class="project-compact-card">
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <div>
+              <div class="project-tag-num mb-1">
+                <span class="p-num">0{{ forloop.counter|add:1 }}</span>
+                <span class="p-cat">{% if forloop.first %}E-COMMERCE{% else %}DATA VISUALIZATION{% endif %}</span>
+              </div>
+              <h3 class="project-compact-title">{{ project.title }}</h3>
+              <div class="project-compact-sub">{% if forloop.first %}High-Throughput E-Commerce Platform{% else %}Relational Database Schema Visualizer{% endif %}</div>
+            </div>
+            <div class="project-thumb-mini">
+              {% if forloop.first %}
+              <img src="{% static 'images/project-shopcore.svg' %}" alt="{{ project.title }}">
+              {% else %}
+              <img src="{% static 'images/project-querycraft.svg' %}" alt="{{ project.title }}">
+              {% endif %}
+            </div>
+          </div>
+
+          <p class="project-compact-desc">{{ project.short_description }}</p>
+
+          <div class="project-tech-badges mb-3">
+            {% for tech in project.technologies.all %}
+            <span class="tech-badge-pill">{{ tech.name }}</span>
+            {% endfor %}
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between pt-2 border-top">
+            <a href="{{ project.get_absolute_url }}" class="link-view-all">
+              View Case Study &rarr;
+            </a>
+            {% if project.github_url %}
+            <a href="{{ project.github_url }}" class="text-secondary fs-5" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+              <i class="bi bi-github"></i>
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     PANEL 5: TECHNOLOGY & TOOLS (2x2 GRID)
+     ========================================================================== -->
+<section class="skills-section" id="skills">
+  <div class="container">
+    <div class="mb-4">
+      <span class="section-eyebrow">TECHNOLOGY &amp; TOOLS</span>
+      <h2 class="section-title mb-1">Technology I build with</h2>
+      <p class="section-subtitle mb-0">
+        A focused stack for building reliable, data-driven web applications.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      {% for cat in skill_categories %}
+      <div class="col-md-6">
+        <div class="tech-matrix-card">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="d-flex align-items-center gap-2">
+              <div class="tech-cat-icon cat-{{ cat.key }}">
+                <i class="bi {{ cat.icon|default:'bi-layers' }}"></i>
+              </div>
+              <h3 class="tech-cat-heading">{{ cat.display_name }}</h3>
+            </div>
+            <i class="bi bi-chevron-right text-muted"></i>
+          </div>
+
+          <div class="tech-checklist">
+            {% for skill in cat.skills.all %}
+            <div class="tech-check-item">
+              <i class="bi bi-check2 text-primary fw-bold"></i>
+              <span>{{ skill.name }}</span>
+            </div>
+            {% endfor %}
+          </div>
+
+          <div class="tech-card-bottom">
+            <span class="tool-count-pill">{{ cat.skills.count }} tools</span>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     PANEL 6 (TOP): PROFESSIONAL EXPERIENCE TIMELINE
+     ========================================================================== -->
+<section class="experience-section" id="experience">
+  <div class="container">
+    <div class="mb-5">
+      <span class="section-eyebrow">MY JOURNEY</span>
+      <h2 class="section-title mb-1">Professional Experience</h2>
+    </div>
+
+    <div class="timeline-v-container">
+      {% for item in work_experiences %}
+      <div class="timeline-v-item">
+        <div class="timeline-v-year">{{ item.start_date }}</div>
+        <div class="timeline-v-line">
+          <span class="timeline-v-node"></span>
+        </div>
+        <div class="timeline-v-content">
+          <h3 class="timeline-v-role">{{ item.title }}</h3>
+          <div class="timeline-v-meta">
+            <i class="bi bi-geo-alt me-1"></i> {{ item.organization }} &bull; {{ item.location|default:"Lagos, Nigeria" }}
+          </div>
+          <p class="timeline-v-desc">{{ item.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     PANEL 6 (BOTTOM): DARK CONTACT CTA SECTION
+     ========================================================================== -->
+<section class="dark-contact-section" id="contact">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <!-- Left: Contact Details -->
+      <div class="col-lg-5">
+        <span class="dark-eyebrow">LET'S BUILD SOMETHING</span>
+        <h2 class="dark-contact-title">Have a project, opportunity or idea?</h2>
+        <p class="dark-contact-sub">Let's talk about it.</p>
+
+        <div class="mb-4">
+          <a href="mailto:{{ profile.email|default:'joseph@example.com' }}" class="btn-primary-pill">
+            Get In Touch &rarr;
+          </a>
+        </div>
+
+        <div class="dark-pill-links">
+          <a href="mailto:{{ profile.email|default:'joseph@example.com' }}" class="dark-contact-pill">
+            <i class="bi bi-envelope"></i>
+            <span>{{ profile.email|default:"joseph@example.com" }}</span>
+          </a>
+          <a href="{{ profile.linkedin_url|default:'https://linkedin.com/in/joseph' }}" class="dark-contact-pill" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-linkedin"></i>
+            <span>linkedin.com/in/joseph</span>
+          </a>
+          <a href="{{ profile.github_url|default:'https://github.com/joseph' }}" class="dark-contact-pill" target="_blank" rel="noopener noreferrer">
+            <i class="bi bi-github"></i>
+            <span>github.com/joseph</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Dark Form -->
+      <div class="col-lg-7">
+        <div class="dark-form-box">
+          <div id="contactFormAlert" class="d-none"></div>
+
+          <form id="portfolioContactForm" action="{% url 'contact:submit' %}" method="POST" novalidate>
+            {% csrf_token %}
+            {{ contact_form.confirm_website }}
+
+            <div class="row g-3 mb-3">
+              <div class="col-sm-6">
+                <label for="id_contact_name" class="dark-form-label">Name <span class="text-danger">*</span></label>
+                <input type="text" name="name" id="id_contact_name" class="dark-form-input" placeholder="Your name" required>
+              </div>
+              <div class="col-sm-6">
+                <label for="id_contact_email" class="dark-form-label">Email <span class="text-danger">*</span></label>
+                <input type="email" name="email" id="id_contact_email" class="dark-form-input" placeholder="your@email.com" required>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="id_contact_subject" class="dark-form-label">Subject <span class="text-danger">*</span></label>
+              <input type="text" name="subject" id="id_contact_subject" class="dark-form-input" placeholder="Select a subject" required>
+            </div>
+
+            <div class="mb-4">
+              <label for="id_contact_message" class="dark-form-label">Message <span class="text-danger">*</span></label>
+              <textarea name="message" id="id_contact_message" rows="4" class="dark-form-input" placeholder="Tell me about your project or opportunity..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary-pill w-100 justify-content-center py-3" id="btnSubmitContact">
+              Send Message &rarr;
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Software Projects &amp; Case Studies | {{ profile.name|default:"Joseph Ashirumah" }}{% endblock %}
+
+{% block content %}
+<div class="case-study-hero">
+  <div class="container">
+    <a href="{% url 'core:home' %}" class="case-study-back">
+      <i class="bi bi-arrow-left"></i> Home
+    </a>
+    <span class="hero-eyebrow">ENGINEERING PORTFOLIO</span>
+    <h1 class="hero-title mb-2">Projects &amp; Systems Architecture</h1>
+    <p class="section-subtitle" style="max-width: 680px;">
+      Explore end-to-end full-stack applications, robust backend APIs, and database-driven solutions built with Python, Django, SQL, and modern web tools.
+    </p>
+  </div>
+</div>
+
+<section class="section-wrapper">
+  <div class="container">
+    <!-- Filter and Search Toolbar -->
+    <div class="row align-items-center g-3 mb-5">
+      <!-- Search Input -->
+      <div class="col-md-6 col-lg-5">
+        <form method="GET" action="{% url 'projects:project_list' %}" class="d-flex gap-2">
+          {% if selected_tech %}
+            <input type="hidden" name="tech" value="{{ selected_tech.slug }}">
+          {% endif %}
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0" style="border-color: var(--border-subtle); color: var(--text-muted);">
+              <i class="bi bi-search"></i>
+            </span>
+            <input
+              type="text"
+              name="q"
+              value="{{ search_query }}"
+              class="form-control border-start-0"
+              style="border-color: var(--border-subtle); border-radius: 0 var(--radius-md) var(--radius-md) 0;"
+              placeholder="Search projects, technologies..."
+              aria-label="Search projects"
+            >
+          </div>
+          <button type="submit" class="btn-custom-outline">Search</button>
+          {% if search_query or selected_tech %}
+          <a href="{% url 'projects:project_list' %}" class="btn-custom-secondary" title="Clear Filters">
+            <i class="bi bi-x-lg"></i>
+          </a>
+          {% endif %}
+        </form>
+      </div>
+
+      <!-- Technology Filter Pills -->
+      <div class="col-md-6 col-lg-7">
+        <div class="d-flex flex-wrap gap-2 justify-content-md-end align-items-center">
+          <span class="small text-muted me-1 fw-semibold font-mono">FILTER:</span>
+          <a
+            href="{% url 'projects:project_list' %}{% if search_query %}?q={{ search_query }}{% endif %}"
+            class="badge {% if not selected_tech %}bg-primary text-white{% else %}bg-white border text-secondary{% endif %} text-decoration-none py-2 px-3 rounded-pill"
+          >
+            All
+          </a>
+          {% for tech in all_technologies %}
+          <a
+            href="?tech={{ tech.slug }}{% if search_query %}&q={{ search_query }}{% endif %}"
+            class="badge {% if selected_tech.slug == tech.slug %}bg-primary text-white{% else %}bg-white border text-secondary{% endif %} text-decoration-none py-2 px-3 rounded-pill"
+          >
+            {{ tech.name }}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Projects Grid -->
+    {% if projects %}
+    <div class="row g-4">
+      {% for project in projects %}
+      <div class="col-md-6 col-lg-4">
+        <div class="project-card-standard">
+          <!-- Thumbnail Mockup -->
+          <div class="project-standard-thumb">
+            {% if project.image %}
+              <img src="{{ project.image.url }}" alt="{{ project.title }}">
+            {% elif 'devpulse' in project.slug %}
+              <img src="{% static 'images/project-devpulse.svg' %}" alt="{{ project.title }} Telemetry Dashboard">
+            {% elif 'shopcore' in project.slug %}
+              <img src="{% static 'images/project-shopcore.svg' %}" alt="{{ project.title }} Mockup">
+            {% elif 'querycraft' in project.slug %}
+              <img src="{% static 'images/project-querycraft.svg' %}" alt="{{ project.title }} Mockup">
+            {% elif 'taskstream' in project.slug %}
+              <img src="{% static 'images/project-taskstream.svg' %}" alt="{{ project.title }} Mockup">
+            {% else %}
+              <img src="{% static 'images/project-devpulse.svg' %}" alt="{{ project.title }} Mockup">
+            {% endif %}
+          </div>
+
+          <div class="project-standard-body">
+            <div class="project-meta-top">
+              <span class="project-num">0{{ forloop.counter }}</span>
+              <span class="project-category">ENGINEERING ARCHITECTURE</span>
+            </div>
+
+            <h3 class="project-standard-title">
+              <a href="{{ project.get_absolute_url }}">{{ project.title }}</a>
+            </h3>
+
+            <p class="project-standard-desc">
+              {{ project.short_description }}
+            </p>
+
+            <div class="tech-tag-group">
+              {% for tech in project.technologies.all %}
+              <span class="tech-badge {{ tech.badge_style }}">{{ tech.name }}</span>
+              {% endfor %}
+            </div>
+
+            <div class="project-standard-footer">
+              <a href="{{ project.get_absolute_url }}" class="project-action-link">
+                Architecture Study <i class="bi bi-arrow-right"></i>
+              </a>
+
+              <div class="d-flex gap-2">
+                {% if project.github_url %}
+                <a href="{{ project.github_url }}" class="project-ext-link" target="_blank" rel="noopener noreferrer" title="View Source on GitHub">
+                  <i class="bi bi-github"></i>
+                </a>
+                {% endif %}
+
+                {% if project.live_url %}
+                <a href="{{ project.live_url }}" class="project-ext-link" target="_blank" rel="noopener noreferrer" title="Live Demonstration">
+                  <i class="bi bi-box-arrow-up-right"></i>
+                </a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="text-center py-5">
+      <div class="mb-3">
+        <i class="bi bi-folder-x fs-1 text-muted"></i>
+      </div>
+      <h3 class="h5 text-dark">No projects matched your criteria</h3>
+      <p class="text-secondary small mb-3">Try clearing search terms or selected technology filters.</p>
+      <a href="{% url 'projects:project_list' %}" class="btn-custom-outline">Reset Filter</a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="grad-avatar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="30" fill="url(#grad-avatar)" stroke="rgba(6, 182, 212, 0.3)" stroke-width="4"/>
+  <circle cx="200" cy="150" r="65" fill="#334155" stroke="url(#cyan-glow)" stroke-width="4"/>
+  <path d="M 90 340 C 90 240, 310 240, 310 340 Z" fill="#1e293b" stroke="url(#cyan-glow)" stroke-width="3"/>
+  <!-- Software Engineer Monogram Badge -->
+  <rect x="155" y="300" width="90" height="30" rx="6" fill="#06b6d4" />
+  <text x="200" y="320" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" fill="#080c14" text-anchor="middle">&lt;DEV /&gt;</text>
+</svg>

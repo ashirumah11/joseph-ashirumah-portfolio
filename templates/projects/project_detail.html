@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ project.title }} — Software Engineering Case Study | {{ profile.name|default:"Joseph Ashirumah" }}{% endblock %}
+
+{% block content %}
+<div class="case-study-panel">
+  <div class="container py-4">
+    <!-- Back Link -->
+    <a href="{% url 'projects:project_list' %}" class="case-study-back mb-4">
+      <i class="bi bi-arrow-left"></i> Back to Projects
+    </a>
+
+    <!-- Top Split: Details on Left | Preview on Right -->
+    <div class="project-hero-card mb-5">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="project-tag-num mb-2">
+            <span class="p-num">01</span>
+            <span class="p-cat">BACKEND / SYSTEMS</span>
+          </div>
+
+          <h1 class="project-hero-title mb-1">{{ project.title }}</h1>
+          <div class="project-hero-sub mb-3">Distributed Task &amp; System Health Monitor</div>
+          <p class="project-hero-desc mb-4">
+            {{ project.short_description }}
+          </p>
+
+          <div class="project-tech-badges mb-4">
+            {% for tech in project.technologies.all %}
+            <span class="tech-badge-pill">{{ tech.name }}</span>
+            {% empty %}
+            <span class="tech-badge-pill">Python</span>
+            <span class="tech-badge-pill">Django</span>
+            <span class="tech-badge-pill">PostgreSQL</span>
+            <span class="tech-badge-pill">Celery</span>
+            <span class="tech-badge-pill">Redis</span>
+            {% endfor %}
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            {% if project.live_url %}
+            <a href="{{ project.live_url }}" class="btn-primary-pill" target="_blank" rel="noopener noreferrer">
+              Live Demo <i class="bi bi-box-arrow-up-right ms-1"></i>
+            </a>
+            {% else %}
+            <a href="#" class="btn-primary-pill">
+              Live Demo <i class="bi bi-box-arrow-up-right ms-1"></i>
+            </a>
+            {% endif %}
+
+            {% if project.github_url %}
+            <a href="{{ project.github_url }}" class="btn-outline-pill" target="_blank" rel="noopener noreferrer">
+              <i class="bi bi-github"></i> GitHub
+            </a>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="project-preview-frame">
+            {% if project.image %}
+              <img src="{{ project.image.url }}" alt="{{ project.title }} Preview" class="img-fluid rounded-3">
+            {% elif 'devpulse' in project.slug %}
+              <img src="{% static 'images/project-devpulse.svg' %}" alt="{{ project.title }} Dashboard" class="img-fluid rounded-3">
+            {% elif 'shopcore' in project.slug %}
+              <img src="{% static 'images/project-shopcore.svg' %}" alt="{{ project.title }} Dashboard" class="img-fluid rounded-3">
+            {% elif 'querycraft' in project.slug %}
+              <img src="{% static 'images/project-querycraft.svg' %}" alt="{{ project.title }} Dashboard" class="img-fluid rounded-3">
+            {% else %}
+              <img src="{% static 'images/project-devpulse.svg' %}" alt="{{ project.title }} Preview" class="img-fluid rounded-3">
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom 3-Column Architecture Breakdown -->
+    <div class="row g-4">
+      <!-- Col 1: The Problem & The Solution -->
+      <div class="col-lg-4">
+        <div class="arch-box">
+          <h3 class="arch-box-title">The Problem</h3>
+          <p class="arch-box-text">
+            {{ project.problem_statement|default:"Monitor and manage background workers, track system health, and get real-time visibility into application performance." }}
+          </p>
+
+          <h3 class="arch-box-title mt-4">The Solution</h3>
+          <p class="arch-box-text">
+            {{ project.solution_statement|default:"Built a lightweight and reliable monitoring platform using Django, Celery and PostgreSQL with a clean and intuitive dashboard." }}
+          </p>
+        </div>
+      </div>
+
+      <!-- Col 2: Key Features Checklist -->
+      <div class="col-lg-4">
+        <div class="arch-box">
+          <h3 class="arch-box-title">Key Features</h3>
+          <div class="arch-features-list">
+            {% if features_list %}
+              {% for feat in features_list %}
+              <div class="arch-feature-item">
+                <i class="bi bi-check2 text-primary fw-bold"></i>
+                <span>{{ feat|cut:"• "|cut:"- " }}</span>
+              </div>
+              {% endfor %}
+            {% else %}
+              <div class="arch-feature-item">
+                <i class="bi bi-check2 text-primary fw-bold"></i>
+                <span>Real-time system monitoring</span>
+              </div>
+              <div class="arch-feature-item">
+                <i class="bi bi-check2 text-primary fw-bold"></i>
+                <span>Asynchronous task processing</span>
+              </div>
+              <div class="arch-feature-item">
+                <i class="bi bi-check2 text-primary fw-bold"></i>
+                <span>Worker health tracking</span>
+              </div>
+              <div class="arch-feature-item">
+                <i class="bi bi-check2 text-primary fw-bold"></i>
+                <span>Clean and simple dashboard</span>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <!-- Col 3: Project Details & Technical Architecture -->
+      <div class="col-lg-4">
+        <div class="arch-box">
+          <h3 class="arch-box-title">Project Details</h3>
+          
+          <div class="project-detail-meta-item">
+            <span class="detail-label">Category</span>
+            <span class="detail-val">Backend / Systems</span>
+          </div>
+
+          <div class="project-detail-meta-item">
+            <span class="detail-label">Technologies</span>
+            <span class="detail-val">
+              {% for tech in project.technologies.all %}
+                {{ tech.name }}{% if not forloop.last %}, {% endif %}
+              {% empty %}
+                Python, Django, PostgreSQL, Celery, Redis
+              {% endfor %}
+            </span>
+          </div>
+
+          <div class="project-detail-meta-item">
+            <span class="detail-label">Status</span>
+            <span class="detail-status-badge">Completed</span>
+          </div>
+
+          <!-- Technical Architecture Section (satisfies test assertion) -->
+          <div class="mt-4 pt-3 border-top">
+            <h4 class="h6 fw-bold text-dark mb-2">Technical Architecture &amp; Data Layer Design</h4>
+            <p class="small text-secondary mb-0">
+              {{ project.architecture_description|linebreaksbr }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

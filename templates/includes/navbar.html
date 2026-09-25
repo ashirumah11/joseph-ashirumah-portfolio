@@ -1,0 +1,56 @@
+{% load static %}
+<nav class="site-navbar" id="mainNavbar">
+    <div class="nav-container">
+
+        <!-- Brand -->
+        <a href="{% url 'core:home' %}" class="nav-brand" aria-label="Joseph.dev Home">
+            <span class="brand-symbol">&lt;/&gt;</span>
+            <span class="brand-name">Joseph.dev</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="nav-links" id="desktopNav">
+            <a href="{% url 'core:home' %}#hero" class="nav-link">Home</a>
+            <a href="{% url 'core:home' %}#about" class="nav-link">About</a>
+            <a href="{% url 'core:home' %}#skills" class="nav-link">Skills</a>
+            <a href="{% url 'core:home' %}#projects" class="nav-link">Projects</a>
+            <a href="{% url 'core:home' %}#experience" class="nav-link">Experience</a>
+            <a href="{% url 'core:home' %}#contact" class="nav-link">Contact</a>
+        </div>
+
+        <!-- CTA -->
+        <a href="{% url 'core:home' %}#contact" class="nav-cta">
+            Let's Talk
+            <span class="nav-cta-arrow">&rarr;</span>
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button
+            class="nav-toggle"
+            id="navToggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="mobileNav"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <a href="{% url 'core:home' %}#hero" class="mobile-nav-link">Home</a>
+        <a href="{% url 'core:home' %}#about" class="mobile-nav-link">About</a>
+        <a href="{% url 'core:home' %}#skills" class="mobile-nav-link">Skills</a>
+        <a href="{% url 'core:home' %}#projects" class="mobile-nav-link">Projects</a>
+        <a href="{% url 'core:home' %}#experience" class="mobile-nav-link">Experience</a>
+        <a href="{% url 'core:home' %}#contact" class="mobile-nav-link">Contact</a>
+
+        <a href="{% url 'core:home' %}#contact" class="mobile-nav-cta">
+            Let's Talk &rarr;
+        </a>
+    </div>
+</nav>
