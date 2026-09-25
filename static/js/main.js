@@ -4,6 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   initNavbarScroll();
   initMobileNav();
   initBackToTop();
@@ -11,6 +12,65 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initScrollSpy();
 });
+
+/**
+ * Light / Dark theme toggler with persistence & OS sync
+ */
+function initThemeToggle() {
+  const desktopBtn = document.getElementById('themeToggleBtn');
+  const mobileBtn = document.getElementById('themeToggleMobile');
+
+  const getCurrentTheme = () => {
+    return document.documentElement.getAttribute('data-theme') || 'light';
+  };
+
+  const updateLabels = (theme) => {
+    const labels = document.querySelectorAll('.theme-mode-label');
+    labels.forEach((l) => {
+      l.textContent = theme === 'dark' ? 'Dark' : 'Light';
+    });
+    if (desktopBtn) {
+      const next = theme === 'dark' ? 'light' : 'dark';
+      desktopBtn.setAttribute('title', `Switch to ${next} mode`);
+      desktopBtn.setAttribute('aria-label', `Switch to ${next} mode`);
+    }
+  };
+
+  const toggleTheme = () => {
+    const current = getCurrentTheme();
+    const nextTheme = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', nextTheme);
+    try {
+      localStorage.setItem('portfolio-theme', nextTheme);
+    } catch (e) {
+      console.warn('Storage unavailable', e);
+    }
+    updateLabels(nextTheme);
+  };
+
+  if (desktopBtn) {
+    desktopBtn.addEventListener('click', toggleTheme);
+  }
+  if (mobileBtn) {
+    mobileBtn.addEventListener('click', toggleTheme);
+  }
+
+  // Sync initial labels
+  updateLabels(getCurrentTheme());
+
+  // Listen for OS scheme changes if user hasn't set an explicit preference
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      try {
+        if (!localStorage.getItem('portfolio-theme')) {
+          const newTheme = e.matches ? 'dark' : 'light';
+          document.documentElement.setAttribute('data-theme', newTheme);
+          updateLabels(newTheme);
+        }
+      } catch (err) {}
+    });
+  }
+}
 
 /**
  * Navbar elevation & backdrop blur on page scroll

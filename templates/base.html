@@ -8,6 +8,16 @@
 
   <title>{% block title %}{{ site_settings.site_title|default:"Joseph Ashirumah | Full-Stack Software Engineer" }}{% endblock %}</title>
 
+  <!-- Anti-FOUC Theme Detection Script -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('portfolio-theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+
   <!-- SEO Meta Tags -->
   <meta name="description" content="{% block meta_description %}{{ site_settings.meta_description|default:'Full-Stack Software Engineer specializing in Python, Django, SQL, PostgreSQL, and modern web application development.' }}{% endblock %}">
   <meta name="author" content="{{ profile.name|default:'Joseph Ashirumah' }}">

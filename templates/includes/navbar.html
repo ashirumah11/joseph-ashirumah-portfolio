@@ -18,6 +18,18 @@
             <a href="{% url 'core:home' %}#contact" class="nav-link">Contact</a>
         </div>
 
+        <!-- Theme Toggle Button (Desktop) -->
+        <button
+            class="theme-toggle-btn"
+            id="themeToggleBtn"
+            type="button"
+            aria-label="Toggle light or dark theme"
+            title="Toggle light or dark theme"
+        >
+            <i class="bi bi-moon-stars theme-icon-dark"></i>
+            <i class="bi bi-sun theme-icon-light"></i>
+        </button>
+
         <!-- CTA -->
         <a href="{% url 'core:home' %}#contact" class="nav-cta">
             Let's Talk
@@ -48,6 +60,22 @@
         <a href="{% url 'core:home' %}#projects" class="mobile-nav-link">Projects</a>
         <a href="{% url 'core:home' %}#experience" class="mobile-nav-link">Experience</a>
         <a href="{% url 'core:home' %}#contact" class="mobile-nav-link">Contact</a>
+
+        <div class="mobile-theme-row">
+            <button
+                class="theme-toggle-btn-mobile"
+                id="themeToggleMobile"
+                type="button"
+                aria-label="Toggle light or dark theme"
+            >
+                <span>Theme Mode</span>
+                <span class="d-flex align-items-center gap-2">
+                    <i class="bi bi-moon-stars theme-icon-dark"></i>
+                    <i class="bi bi-sun theme-icon-light"></i>
+                    <span class="theme-mode-label">Toggle</span>
+                </span>
+            </button>
+        </div>
 
         <a href="{% url 'core:home' %}#contact" class="mobile-nav-cta">
             Let's Talk &rarr;
