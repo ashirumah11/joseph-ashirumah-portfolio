@@ -59,14 +59,14 @@
 
         <div class="col-lg-6">
           <div class="project-preview-frame">
-            {% if project.image %}
-              <img src="{{ project.image.url }}" alt="{{ project.title }} Preview" class="img-fluid rounded-3">
-            {% elif 'devpulse' in project.slug %}
+            {% if 'devpulse' in project.slug %}
               <img src="{% static 'images/project-devpulse.svg' %}" alt="{{ project.title }} Dashboard" class="img-fluid rounded-3">
             {% elif 'shopcore' in project.slug %}
               <img src="{% static 'images/project-shopcore.svg' %}" alt="{{ project.title }} Dashboard" class="img-fluid rounded-3">
             {% elif 'querycraft' in project.slug %}
               <img src="{% static 'images/project-querycraft.svg' %}" alt="{{ project.title }} Dashboard" class="img-fluid rounded-3">
+            {% elif project.image %}
+              <img src="{{ project.image.url }}" alt="{{ project.title }} Preview" class="img-fluid rounded-3">
             {% else %}
               <img src="{% static 'images/project-devpulse.svg' %}" alt="{{ project.title }} Preview" class="img-fluid rounded-3">
             {% endif %}

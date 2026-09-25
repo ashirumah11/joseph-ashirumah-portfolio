@@ -80,14 +80,14 @@
         <div class="project-card-standard">
           <!-- Thumbnail Mockup -->
           <div class="project-standard-thumb">
-            {% if project.image %}
-              <img src="{{ project.image.url }}" alt="{{ project.title }}">
-            {% elif 'devpulse' in project.slug %}
+            {% if 'devpulse' in project.slug %}
               <img src="{% static 'images/project-devpulse.svg' %}" alt="{{ project.title }} Telemetry Dashboard">
             {% elif 'shopcore' in project.slug %}
               <img src="{% static 'images/project-shopcore.svg' %}" alt="{{ project.title }} Mockup">
             {% elif 'querycraft' in project.slug %}
               <img src="{% static 'images/project-querycraft.svg' %}" alt="{{ project.title }} Mockup">
+            {% elif project.image %}
+              <img src="{{ project.image.url }}" alt="{{ project.title }}">
             {% elif 'taskstream' in project.slug %}
               <img src="{% static 'images/project-taskstream.svg' %}" alt="{{ project.title }} Mockup">
             {% else %}

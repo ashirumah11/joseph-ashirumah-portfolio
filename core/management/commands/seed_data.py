@@ -246,7 +246,8 @@ class Command(BaseCommand):
                 "key_features": "• Real-time system monitoring\n• Asynchronous task processing\n• Worker health tracking\n• Clean and simple dashboard",
                 "challenges_and_learnings": "Solved worker connection spikes during high-throughput metric ingestion by introducing an intermediate Redis caching buffer.",
                 "techs": ["Python", "Django", "PostgreSQL", "Celery", "Redis"],
-                "image": "projects/devpulse.svg",
+                # Uses the static project-devpulse.svg mockup rendered by the templates.
+                "image": "",
                 "featured": True,
                 "display_order": 1,
                 "github_url": "https://github.com/joseph/devpulse",
@@ -261,7 +262,8 @@ class Command(BaseCommand):
                 "key_features": "• Atomically locked stock decrementing\n• Cart reservation timeout engine\n• RESTful API architecture\n• Secure payment checkout flow",
                 "challenges_and_learnings": "Eliminated database deadlocks by sorting item primary keys deterministically before acquiring row-level locks.",
                 "techs": ["Django", "PostgreSQL", "React", "JavaScript"],
-                "image": "projects/shopcore.svg",
+                # Uses the static project-shopcore.svg mockup rendered by the templates.
+                "image": "",
                 "featured": True,
                 "display_order": 2,
                 "github_url": "https://github.com/joseph/shopcore",
@@ -276,7 +278,8 @@ class Command(BaseCommand):
                 "key_features": "• Interactive schema diagram visualizer\n• In-browser SQL query workbench\n• Query EXPLAIN plan analyzer\n• Bookmarkable query snippets",
                 "challenges_and_learnings": "Guaranteed security against destructive DDL queries using AST statement parsing and transaction-level read-only constraints.",
                 "techs": ["Python", "Django", "JavaScript", "SQL"],
-                "image": "projects/querycraft.svg",
+                # Uses the static project-querycraft.svg mockup rendered by the templates.
+                "image": "",
                 "featured": True,
                 "display_order": 3,
                 "github_url": "https://github.com/joseph/querycraft",
