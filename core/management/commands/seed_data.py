@@ -69,6 +69,7 @@ class Command(BaseCommand):
             ("linkedin", "LinkedIn", "https://linkedin.com/in/joseph", "bi-linkedin", 2),
             ("twitter", "Twitter", "https://x.com/joseph", "bi-twitter-x", 3),
             ("email", "Email", "mailto:joseph@example.com", "bi-envelope", 4),
+            ("whatsapp", "WhatsApp", "https://wa.me/254792389675", "bi-whatsapp", 5),
         ]
         for platform, label, url, icon, order in socials_data:
             SocialLink.objects.update_or_create(

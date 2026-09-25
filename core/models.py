@@ -229,6 +229,7 @@ class SocialLink(models.Model):
         ('x', 'X (Twitter)'),
         ('instagram', 'Instagram'),
         ('facebook', 'Facebook'),
+        ('whatsapp', 'WhatsApp'),
         ('email', 'Email (mailto)'),
         ('website', 'Portfolio / Blog'),
     ]
