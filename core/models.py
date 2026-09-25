@@ -67,7 +67,7 @@ I approach software engineering with a product-oriented mindset—prioritizing r
         default=True,
         help_text="Toggle visibility of the availability status indicator"
     )
-    github_url = models.URLField(blank=True, default="https://github.com/josephashirumah [EDIT THIS]")
+    github_url = models.URLField(blank=True, default="https://github.com/ashirumah11")
     linkedin_url = models.URLField(blank=True, default="https://linkedin.com/in/josephashirumah [EDIT THIS]")
     twitter_url = models.URLField(blank=True, default="")
     hero_code_snippet = models.TextField(

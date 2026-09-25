@@ -43,7 +43,7 @@ class Command(BaseCommand):
         profile.profile_photo = "profile/headshot.jpg"
         profile.status_badge = "Available for software engineering opportunities"
         profile.status_active = True
-        profile.github_url = "https://github.com/joseph"
+        profile.github_url = "https://github.com/ashirumah11"
         profile.linkedin_url = "https://linkedin.com/in/joseph"
         profile.twitter_url = "https://x.com/joseph"
         profile.save()
@@ -65,7 +65,7 @@ class Command(BaseCommand):
 
         # 3. Social Links
         socials_data = [
-            ("github", "GitHub", "https://github.com/joseph", "bi-github", 1),
+            ("github", "GitHub", "https://github.com/ashirumah11", "bi-github", 1),
             ("linkedin", "LinkedIn", "https://linkedin.com/in/joseph", "bi-linkedin", 2),
             ("twitter", "Twitter", "https://x.com/joseph", "bi-twitter-x", 3),
             ("email", "Email", "mailto:joseph@example.com", "bi-envelope", 4),
